@@ -1,0 +1,12 @@
+# Frontend / Vite / React
+*.log
+.vite
+dist
+coverage
+
+# Backend
+node_modules
+.env
+
+# OS
+.DS_Store
