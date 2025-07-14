@@ -11,14 +11,14 @@ const app=express()
 
 
 app.use(cors({
-    origin:"https://banking-app-fz8i.vercel.app/",
+    origin:"https://banking-app-fz8i.vercel.app",
     credentials:true
 }))
 app.use(express.json())
 
-app.use('/api/auth',authRoute)
-app.use('/api/transaction',transactionRoutes)
-app.use('/api/budget',budgetRoute)
+app.use('/auth',authRoute)
+app.use('/transaction',transactionRoutes)
+app.use('/budget',budgetRoute)
 sequelize.sync({alter:true}).then(()=>console.log("Neon is connected"))
 
 app.listen(process.env.port,()=>{
