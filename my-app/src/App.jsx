@@ -15,6 +15,8 @@ import AboutUs from './Skeletons/AboutUs'
 import Security from './Skeletons/Security'
 import UpgradePlan from './Skeletons/UpgradePlan'
 import ContactUs from './Skeletons/ContactUs'
+import CategorySummary from './Skeletons/CategorySummary'
+//import AddFunds from './Pages/AddFunds'
 function App() {
 
 
@@ -40,6 +42,8 @@ function App() {
          <Route path="/contact" element={<ContactUs />} />
          <Route path="/security" element={<Security />} />
          <Route path="/upgrade" element={<UpgradePlan />} />
+        <Route path="/categories" element={<CategorySummary />} />
+
       
     </Routes>
     </Router>

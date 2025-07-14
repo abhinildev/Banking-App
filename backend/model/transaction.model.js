@@ -14,6 +14,11 @@ const Transaction=sequelize.define("Transaction",{
     date:{
         type:DataTypes.DATE,
         defaultValue:DataTypes.NOW
+    },
+    category:{
+        type:DataTypes.STRING,
+        allowNull:false,
+        defaultValue:'Uncategorized'
     }
 })
 

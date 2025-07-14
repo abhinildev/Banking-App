@@ -7,9 +7,10 @@ import {
   LinearScale,
   Tooltip,
   Legend,
+  Filler
 } from 'chart.js';
 
-ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend,Filler);
 
 const BudgetChart = () => {
   const labels = ['Jun 25', 'Jul 25', 'Aug 25', 'Sep 25(*)', 'Oct 25(*)', 'Nov 25(*)'];

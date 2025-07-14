@@ -10,6 +10,7 @@ import {
   FiShield,
   FiTrendingUp,
 } from 'react-icons/fi';
+import { FaChartPie } from 'react-icons/fa';
 
 const linkClasses =
   'flex items-center gap-3 py-2 px-3 rounded transition hover:bg-[#334155]';
@@ -19,7 +20,7 @@ const Sidebar = () => (
     <h2 className="text-2xl font-bold tracking-wide px-2">Nexus</h2>
 
     <nav className="space-y-1">
-      <NavLink to="/" end className={linkClasses}>
+      <NavLink to="/personalPage" end className={linkClasses}>
         <FiHome /> Dashboard
       </NavLink>
       <NavLink to="/budgets" className={linkClasses}>
@@ -39,6 +40,9 @@ const Sidebar = () => (
       </NavLink>
       <NavLink to="/upgrade" className={linkClasses}>
         <FiTrendingUp /> Upgrade Plan
+      </NavLink>
+      <NavLink to='/categories' className={linkClasses}>
+          <FaChartPie/> Categories
       </NavLink>
     </nav>
   </aside>
