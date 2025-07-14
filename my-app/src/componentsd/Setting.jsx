@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../Pages/Sidebar';
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '/home/abhinildev/Codes/Frontends/my-app/ThemeContext.jsx'; // ⬅️
+import { useTheme } from '../../ThemeContext'; // ⬅️
 
 const Setting = () => {
   const navigate = useNavigate();
