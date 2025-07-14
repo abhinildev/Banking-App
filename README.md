@@ -1,52 +1,51 @@
-# Banking-App
-Personalised Banking app
-🚀 Suggested “Level-Up” Features (Optional but impactful)
-1. User Goals & Budget Limits
-Allow users to set a monthly budget limit.
+# 💸 Banking App – Personal Finance Tracker
 
-Show warnings like: "You've spent 85% of your limit."
-✅ Adds personalization and business logic.
-done
-2. Category-wise Transactions
-Each transaction has a category: Food, Bills, Travel, etc.
+A modern, full-stack **Banking App** built to help users manage their personal finances with real-time insights, budget control, and rich analytics.
 
-Pie chart to show spending distribution
-✅ Common in fintech apps.
-done
-3. Export/Download
-Export transactions as CSV or PDF
+🔐 **Secure**, 📊 **Insightful**, ⚡ **Fast**, and 🌐 **Fully Deployed**
 
-Great for users who want to track offline
-✅ Real-world utility.
-done
-4. Search / Filter Transactions
-Filter by date, type (credit/debit), category
+---
 
-Search bar with instant results
-✅ Improves usability, especially with many transactions.
-done
-5. Dark/Light Theme Toggle
-Save preference in localStorage
-✅ Shows UI polish.
+## 🚀 Features
 
-6. Recurring Transactions
-Example: Monthly rent/donation auto-added
+### ✅ Core Functionality
+- **User Authentication** using JWT tokens
+- **Add Transactions** (donation, debit, withdrawal)
+- **Transaction History** sorted by date
+- **Dynamic Charts** (Line, Pie) for transaction analytics
 
-Let user view and manage recurring entries
-✅ Realistic finance feature.
+### 💡 Level-Up Features (Implemented)
+1. **🎯 Monthly Budget Goals**
+   - Set your monthly limit
+   - Auto-alerts on 85% budget utilization
 
-7. Mobile Responsiveness
-Make sure it looks great on phones
-✅ Critical for a deployed app.
+2. **📊 Category-wise Spending**
+   - Each transaction includes a category (Food, Travel, Bills, etc.)
+   - Pie chart visualizing spending distribution
 
-8. Unit Tests + CI
-Add a few Jest tests for frontend
+3. **📁 Export Transactions**
+   - Download data as **CSV** or **PDF**
+   - Enables offline bookkeeping
 
-Set up a GitHub Actions CI to run on every push
-✅ Shows industry readiness.
+4. **🔍 Filter & Search**
+   - Filter by **date**, **type**, or **category**
+   - Instant search bar for large transaction datasets
 
-9. Deploy to Cloud
-Use Render / Vercel / Railway for backend
+5. **🌓 Light/Dark Mode Toggle**
+   - Toggle theme with localStorage preference saved
 
-Host MongoDB or PostgreSQL on NeonDB / Supabase / Railway
-✅ Adds DevOps/deployment exposure implement all these one by one start from 1 
+6. **🔁 Recurring Transactions** *(Coming Soon)*
+   - Automate monthly rent, donation, etc.
+   - Manage and view recurring entries
+
+7. **📱 Mobile Responsive**
+   - Designed for a seamless mobile experience
+
+8. **🧪 Unit Testing + CI** *(Coming Soon)*
+   - Frontend unit tests with Jest
+   - GitHub Actions for Continuous Integration
+
+9. **🚀 Deployed to Cloud**
+   - **Frontend**: Vercel  
+   - **Backend**: Render  
+   - **Database**: PostgreSQL (NeonDB)
