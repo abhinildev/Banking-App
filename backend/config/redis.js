@@ -1,10 +1,7 @@
 import {createClient} from "redis"
 
 const redisClient= createClient({
-    socket:{
-        host: process.env.REDIS_HOST,
-        port: process.env.REDIS_PORT,
-    },
+   url:process.env.REDIS_URL
 })
 redisClient.on("connect",()=>{
     console.log("Redis connected")
