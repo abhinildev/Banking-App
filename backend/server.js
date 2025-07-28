@@ -11,24 +11,10 @@ dotenv.config()
 const app=express()
 
 await redisClient.connect();
-const allowedOrigins = [
-  "https://banking-m7ennoytl-abhinildevs-projects.vercel.app",
-  "https://banking-osxao0kjl-abhinildevs-projects.vercel.app",
-  "https://your-production-domain.com"
-];
-
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  })
-);
+app.use(cors({
+     origin:"https://banking-osxao0kjl-abhinildevs-projects.vercel.app",
+    credentials:true
+}))
 app.use(express.json())
 
 app.use('/auth',authRoute)
