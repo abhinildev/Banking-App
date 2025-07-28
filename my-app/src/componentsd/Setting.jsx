@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from '../Pages/Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../ThemeContext'; // ⬅️
+import toast from 'react-hot-toast';
 
 const Setting = () => {
   const navigate = useNavigate();
@@ -15,7 +16,8 @@ const Setting = () => {
   };
 
   const handleLogout = () => {
-    alert('Logged out');
+    toast.success("User logged out successfully")
+    //alert('Logged out');
     navigate('/');
   };
 
