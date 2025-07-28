@@ -3,17 +3,18 @@ import dotenv from "dotenv"
 import sequelize from "./config/neon.js"
 import { json } from "sequelize"
 import cors from "cors"
-import authRoute from "../backend/routes/auth.routes.js"
-import transactionRoutes from "../backend/routes/transaction.route.js"
-import budgetRoute from "../backend/routes/budgets.rote.js"
+import authRoute from "./routes/auth.routes.js"
+import transactionRoutes from "./routes/transaction.route.js"
+import budgetRoute from "./routes/budgets.rote.js"
+import redisClient from "./config/redis.js"
 dotenv.config()
 const app=express()
 
-
-app.use(cors({
-    origin:"https://banking-app-fz8i.vercel.app",
-    credentials:true
-}))
+await redisClient.connect();
+// app.use(cors({
+//     origin:"https://banking-app-fz8i.vercel.app",
+//     credentials:true
+// }))
 app.use(express.json())
 
 app.use('/auth',authRoute)

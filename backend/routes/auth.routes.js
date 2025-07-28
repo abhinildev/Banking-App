@@ -7,6 +7,6 @@ router.get('/health-check',()=>{
 })
 router.post('/signup',signup)
 router.post('/login',login)
-router.delete('/login',logout)
+router.delete('/logout',logout)
 
 export default router
