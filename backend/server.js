@@ -12,7 +12,7 @@ const app=express()
 
 await redisClient.connect();
 app.use(cors({
-     origin:"*",
+     origin:"https://banking-m7ennoytl-abhinildevs-projects.vercel.app",
     credentials:true
 }))
 app.use(express.json())
