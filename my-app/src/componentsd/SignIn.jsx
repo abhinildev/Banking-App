@@ -2,7 +2,7 @@ import axios from '../Api/axios.js';
 import React from 'react'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-
+import toast from 'react-hot-toast';
 const SignIn = () => {
   const navigate=useNavigate();
   const [form , setForm]=useState({email:'',password:''})
@@ -13,9 +13,12 @@ const SignIn = () => {
       const res=await axios.post('/auth/login',form);
       localStorage.setItem('token',res.data.token)
       localStorage.setItem('user',JSON.stringify(res.data.user))
+      toast.success("Login In Successfull")
       navigate('/personalPage')
       } catch (error) {
-          alert(error.response?.data?.msg|| 'Login failed')  
+          toast.error("Login Failed Invalid details")
+          console.log(error)
+        //alert(error.response?.data?.msg|| 'Login failed')  
     }
     
   }

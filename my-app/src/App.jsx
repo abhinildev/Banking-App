@@ -16,12 +16,13 @@ import Security from './Skeletons/Security'
 import UpgradePlan from './Skeletons/UpgradePlan'
 import ContactUs from './Skeletons/ContactUs'
 import CategorySummary from './Skeletons/CategorySummary'
-//import AddFunds from './Pages/AddFunds'
+import { Toaster } from 'react-hot-toast'
 function App() {
 
 
   return (
     <Router>
+      <Toaster position='top-center' reverseOrder={false}/>
     <Routes>
          <Route path='/' element={
             <>

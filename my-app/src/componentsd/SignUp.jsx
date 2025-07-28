@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from '../Api/axios.js'; // ✅ make sure this file exists
-
+import toast from 'react-hot-toast';
 const SignUp = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const navigate = useNavigate();
@@ -17,8 +17,11 @@ const SignUp = () => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       navigate('/personalPage');
+      toast.success("Signup Successfull")
     } catch (error) {
-      alert(error.response?.data?.msg || 'Signup failed');
+      toast.error("Error in SignUp")
+      console.log("Error in SignUp: ",error)
+      //alert(error.response?.data?.msg || 'Signup failed');
     }
   };
 
