@@ -10,47 +10,44 @@ import redisClient from "./config/redis.js";
 dotenv.config();
 const app = express();
 
-await redisClient.connect();
-
+// ---- ✅ CORS FIRST ----
 const allowedOrigins = [
   "https://banking-osxao0kjl-abhinildevs-projects.vercel.app",
   "https://banking-m7ennoytl-abhinildevs-projects.vercel.app",
   "https://banking-app-fz8i.vercel.app"
 ];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("CORS not allowed for this origin: " + origin));
-    }
-  },
-  credentials: true,
-};
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
+  }
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); 
-
+// ---- ✅ Redis AFTER CORS ----
+await redisClient.connect();
 app.use(express.json());
 
-
+// ---- ✅ ROUTES ----
 app.use("/auth", authRoute);
 app.use("/transaction", transactionRoutes);
 app.use("/budget", budgetRoute);
 
-
+// ---- ✅ CATCH-ALL 404 WITH CORS ----
 app.use((req, res) => {
   res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
   res.status(404).json({ error: "Not found" });
 });
 
-
+// ---- ✅ START ----
 sequelize.sync({ alter: true }).then(() => console.log("Neon is connected"));
 
-
 const port = process.env.port || 3000;
-app.listen(port, () => {
-  console.log("Server running on port: " + port);
-});
+app.listen(port, () => console.log(`Server running on port ${port}`));
