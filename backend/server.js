@@ -11,10 +11,10 @@ dotenv.config()
 const app=express()
 
 await redisClient.connect();
-// app.use(cors({
-//     origin:"https://banking-app-fz8i.vercel.app",
-//     credentials:true
-// }))
+app.use(cors({
+    origin:"https://banking-app-fz8i.vercel.app",
+    credentials:true
+}))
 app.use(express.json())
 
 app.use('/auth',authRoute)
