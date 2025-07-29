@@ -6,6 +6,7 @@ const instance = axios.create({
   headers: { 'Content-Type': 'application/json' },
   withCredentials: false                 
 });
+//fixes
 
 instance.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
