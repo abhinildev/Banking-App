@@ -3,12 +3,13 @@ import Single from '../Assets/single.png'
 import Double from '../Assets/double.png'
 import Triple from '../Assets/triple.png'
 import { useNavigate } from 'react-router-dom'
-
+import Sidebar from "../Pages/Sidebar"
 const Cards = () => {
 
   const navigate=useNavigate()
   return (
     <div className='w-full py-[10rem] px-4 bg-gray-50'>
+      <Sidebar/>
       <div className='max-w-[1240px] mx-auto grid md:grid-cols-3 gap-6'>
 
         {/* Single User Card */}
