@@ -2,8 +2,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: "https://nexus-backend-o213.onrender.com"
-,  
+  baseURL: "https://nexus-backend-o213.onrender.com",  
   headers: { 'Content-Type': 'application/json' },
   withCredentials: false                 
 });
