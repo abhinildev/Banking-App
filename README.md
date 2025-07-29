@@ -2,6 +2,8 @@
 
 A modern, full-stack **Banking App** built to help users manage their personal finances with real-time insights, budget control, and rich analytics.
 
+Use credentials : email: ron@gmail.com password:123456 to login and view the user's Details
+
 🔐 **Secure**, 📊 **Insightful**, ⚡ **Fast**, and 🌐 **Fully Deployed**
 
 ---
@@ -49,3 +51,4 @@ A modern, full-stack **Banking App** built to help users manage their personal f
    - **Frontend**: Vercel  
    - **Backend**: Render  
    - **Database**: PostgreSQL (NeonDB)
+ 
